@@ -192,21 +192,26 @@
 </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-  <h2 class="section-title">Get In Touch</h2>
-  <p class="contact-text">
- 🤝 Interested in working together? Drop me a message below — I’ll get back to you soon.
+    <section id="contact" class="contact-section">
+  <h2 class="section-title">Contact Me</h2>
+  <p class="contact-intro">
+    🤝 Interested in working together? Drop me a message below — I’ll get back to you soon.
   </p>
 
- <form class="contact-form" action="https://formspree.io/f/xovpragr" method="POST">
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/your-form-id"
+    method="POST"
+  >
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
 
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-</form>
-<p id="form-status" style="display:none; margin-top:10 px;"></p>
+  <p id="form-status"></p>
 </section>
+
 
   </main>
 
