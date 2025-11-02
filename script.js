@@ -31,13 +31,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-// Handle contact form
-function handleSubmit(event) {
-  event.preventDefault();
-  document.getElementById('formMsg').innerText = "Message sent successfully!";
-  event.target.reset();
-  return false;
-}
 
 // Dynamic footer year
 document.getElementById('year').textContent = new Date().getFullYear();
