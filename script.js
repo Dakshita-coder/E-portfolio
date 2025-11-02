@@ -2,42 +2,40 @@
 const navLinks = document.querySelectorAll('nav a');
 
 navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 70, // Adjust for fixed navbar
-                behavior: 'smooth'
-            });
-        }
-    });
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').slice(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 70, // Adjust for fixed navbar
+        behavior: 'smooth'
+      });
+    }
+  });
 });
 
 // Active Section Highlighting on Scroll
 const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
-    let scrollPos = window.scrollY + 80; // Adjust for navbar height
-    sections.forEach(section => {
-        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === section.id) {
-                    link.classList.add('active');
-                }
-            });
+  let scrollPos = window.scrollY + 80; // Adjust for navbar height
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === section.id) {
+          link.classList.add('active');
         }
-    });
+      });
+    }
+  });
 });
 
 // Dynamic footer year
 document.getElementById('year').textContent = new Date().getFullYear();
-  const form = document.querySelector(".contact-form");
-  const status = document.getElementById("form-status");
 
-  // Contact form with Formspree
+// ✅ Contact form (Formspree integration)
 const form = document.querySelector(".contact-form");
 const status = document.getElementById("form-status");
 
@@ -69,22 +67,20 @@ if (form) {
       status.style.color = "orange";
     }
 
-    // Optional: fade out message after a few seconds
+    // Optional: hide message after 4 seconds
     setTimeout(() => {
       status.style.display = "none";
     }, 4000);
   });
 }
 
-
-
 // Optional: Mobile Menu Toggle
 const menuBtn = document.querySelector('.menu-btn');
 const navMenu = document.querySelector('nav .nav-links');
 
 if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuBtn.classList.toggle('open');
-    });
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuBtn.classList.toggle('open');
+  });
 }
