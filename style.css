@@ -596,16 +596,39 @@ footer {
 /* ------------------------------
    Responsive Design
 ------------------------------ */
-@media (max-width: 768px) {
-  .nav {
+
+ @media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
     flex-direction: column;
-    text-align: center;
+    width: 200px;
+    padding: 20px;
+    display: none;
   }
-  nav {
-    margin-top: 0.8rem;
+
+  .nav-links.active {
+    display: flex;
   }
+
   .hero {
     flex-direction: column;
     text-align: center;
+  }
+
+  .profile-card img {
+    width: 140px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
