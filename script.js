@@ -75,12 +75,26 @@ if (form) {
 }
 
 // Optional: Mobile Menu Toggle
+// Mobile Menu Toggle
 const menuBtn = document.querySelector('.menu-btn');
-const navMenu = document.querySelector('nav .nav-links');
+const navLinks = document.querySelector('.nav-links');
 
-if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuBtn.classList.toggle('open');
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Smooth Scroll
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const id = this.getAttribute('href').slice(1);
+    const section = document.getElementById(id);
+
+    window.scrollTo({
+      top: section.offsetTop - 60,
+      behavior: 'smooth'
+    });
+
+    navLinks.classList.remove('active');
   });
-}
+});
